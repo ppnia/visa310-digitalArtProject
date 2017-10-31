@@ -1,0 +1,150 @@
+.noStyleLi{
+  list-style-type: none;
+}
+
+.noMarginUl{
+  margin:-3px;  
+}
+
+.inline{
+  display:inline-block;
+}
+
+.block{
+  display:block;
+}
+
+.contrasted{
+  -webkit-filter: contrast(5);
+}
+
+.contrasted2{
+  -webkit-filter: contrast(1);
+}
+
+
+.popsicle{
+ height: 300px;
+    width: 140px;
+      border-radius: 80px 80px 20px 20px;
+  background-color: #cc9228;
+  -webkit-filter: blur(3px);
+  transform-origin:bottom;
+}
+
+.popsicleAnimForward{
+/*     -webkit-animation: meltAnim 10s linear 100ms infinite; */
+  
+  animation-name: meltAnim;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-fill-mode: forward;
+animation-play-state: running;
+  animation-delay: 100ms;
+}
+.popsicleAnimReverse{
+    -webkit-animation: meltAnim 10s linear 100ms infinite reverse;
+}
+
+
+.drip{
+  position:relative;
+  height:100px;
+  width:100px;
+    background-color: #cc9228;
+   left:98px;
+  top:0px;
+  border-radius: 50%;
+ 
+    }
+
+.dripAnimForward{
+   -webkit-animation: dripAnim 1s linear infinite;
+}
+
+.dripAnimReverse{
+   -webkit-animation: dripAnim 1s linear infinite reverse;
+}
+
+
+.stick{
+  height:100px;
+  width:30px;
+  border-radius: 0 0 10px 10px;
+  background-color: #e0b361;
+  -webkit-filter: blur(1px);
+  position: absolute;
+  left: 49.5%;
+  top: 310px;
+  z-index: -1;
+}
+
+.repositionDripForward{
+  -webkit-animation: repositionDripAnim 10s linear 100ms infinite alternate;
+}
+.repositionDripReverse{
+  -webkit-animation: repositionDripAnim 10s linear 100ms infinite reverse;
+}
+
+.puddle{
+  position:relative;
+  height:5px;
+    background-color: #cc9228;
+  left:90px;
+  top:80px;
+  border-radius:50%;
+  z-index: -2;
+}
+
+.puddleAnimForward{
+  -webkit-animation: puddleAnim 10s linear infinite alternate;
+}
+
+.puddleAnimReverse{
+  
+  -webkit-animation: puddleAnim 10s linear infinite reverse;
+}
+
+
+@-webkit-keyframes dripAnim {
+  0% { -webkit-transform: translate(0, 0px); width: 5px; height: 5px; }
+  20% { -webkit-transform: translate(0px, 2px); width: 15px; height:15px; }
+  60% { -webkit-transform: translate(0, 4px); width: 15px; height: 15px; }
+  100% { -webkit-transform: translate(0,80px); width: 15px; height: 15px; }
+}
+
+@-webkit-keyframes meltAnim {
+  0% { -webkit-transform: translate(0, 0px);}
+  100% {-webkit-transform: translate(0,300px);
+    height: 1px; }
+}
+
+@-webkit-keyframes repositionDripAnim {
+  0% { -webkit-transform: translate(0, 0px);}
+  100% {-webkit-transform: translate(0,300px);
+  }
+}
+
+@-webkit-keyframes stickAnim {
+   0% { -webkit-transform: translate(0, 0px);}
+  100% {-webkit-transform: translate(0, 300px);}
+}
+
+@-webkit-keyframes puddleAnim {
+   0% {width:0px;}
+  100% {width:100px}
+}
+
+
+body {
+  height: 100%;
+  background-color: #001f3f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
