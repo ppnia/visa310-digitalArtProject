@@ -26,6 +26,13 @@
   -webkit-filter: contrast(1);
 }
 
+.instruction{
+    position: absolute;
+    left: 20px;
+    font-family: "Arial", Times, serif;
+    color: white;
+    
+}
 .popsicle{
     position: absolute;
  height: 300px;
@@ -44,7 +51,7 @@
     border-radius: 80px 10px 20px 20px;
     background: -webkit-linear-gradient(left, rgba(94,69,24,0.2) 5%, rgba(204,146,40,0.1) 90%,rgba(242,186,146,0.4)5%);
     left:460px;
-    top: 7%;
+    top: 50px;
 }
 
 .popsicleFillingRight{
@@ -54,22 +61,32 @@
     border-radius: 10px 80px 20px 20px;
     background: -webkit-linear-gradient(left, rgba(94,69,24,0.2) 1%, rgba(204,146,40,0.1) 90%,rgba(242,186,146,0.4)5%);
     left:520px;
-    top:7%;
+    top: 50px;
 }
 .popsicleAnimForward{
-/*     -webkit-animation: meltAnim 10s linear 100ms infinite; */
+
   
   animation-name: meltAnim;
-    animation-duration: 100s;
+    animation-duration: 500s;
     animation-iteration-count: infinite;
-    animation-direction: alternate;
+    animation-direction: normal;
   animation-timing-function: linear;
   animation-fill-mode: forward;
 animation-play-state: running;
   animation-delay: 100ms;
 }
-.popsicleAnimReverse{
-    -webkit-animation: meltAnim 100s linear 100ms infinite reverse;
+
+.popsicleFillingAnim{
+
+  
+  animation-name: meltFillingAnim;
+    animation-duration: 500s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  animation-timing-function: linear;
+  animation-fill-mode: forward;
+animation-play-state: running;
+  animation-delay: 100ms;
 }
 
 
@@ -79,13 +96,18 @@ animation-play-state: running;
   width:100px;
     background-color: #cc9228;
    left:550px;
-  top:290px;
+  top:305px;
   border-radius: 50%;
     -webkit-filter: blur(3px);
     }
 
 .dripAnimForward{
-   -webkit-animation: dripAnim 1s linear infinite;
+    animation-name: dripAnim;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-play-state: running;
 }
 
 .dripAnimReverse{
@@ -94,18 +116,18 @@ animation-play-state: running;
 
 
 .stick{
+    position: absolute;
   height:180px;
   width:30px;
   border-radius: 10px 10px 10px 10px;
   background-color: #e0b361;
   -webkit-filter: blur(1px);
-  position: absolute;
   left: 500px;
-  top: 50%;
+  top: 240px;
 }
 
 .repositionDripForward{
-  -webkit-animation: repositionDripAnim 100s linear 100ms infinite alternate;
+  -webkit-animation: repositionDripAnim 100s linear 100ms infinite normal;
 }
 .repositionDripReverse{
   -webkit-animation: repositionDripAnim 100s linear 100ms infinite reverse;
@@ -116,31 +138,32 @@ animation-play-state: running;
   height:5px;
     background-color: #cc9228;
   left:550px;
-    top:410px;
+    top:415px;
   border-radius:50%;
      -webkit-filter: blur(2px);
 }
 
 .puddleAnimForward{
-  -webkit-animation: puddleAnim 100s linear infinite alternate;
+  -webkit-animation: puddleAnim 500s linear infinite normal;
 }
-
-.puddleAnimReverse{
-  
-  -webkit-animation: puddleAnim 100s linear infinite reverse;
-}
-
 
 @-webkit-keyframes dripAnim {
   0% { -webkit-transform: translate(0, 0px); width: 5px; height: 5px; }
   50% { -webkit-transform: translate(0px, 2px); width: 15px; height:15px; }
   60% { -webkit-transform: translate(0, 4px); width: 15px; height: 15px; }
-  100% { -webkit-transform: translate(0,123px); width: 15px; height: 15px; }
+  98% { -webkit-transform: translate(0,99px); width: 15px; height: 15px; }
+    100% { -webkit-transform: translate(0,100px); width: 15px; height: 15px; }
 }
 
 @-webkit-keyframes meltAnim {
   0% { -webkit-transform: translate(0, 0px);}
   100% {-webkit-transform: translate(0,300px);
+    height: 1px; }
+}
+
+@-webkit-keyframes meltFillingAnim {
+  0% { -webkit-transform: translate(0, 0px);}
+  100% {-webkit-transform: translate(0,265px);
     height: 1px; }
 }
 
@@ -156,7 +179,7 @@ animation-play-state: running;
 }
 
 @-webkit-keyframes puddleAnim {
-   0% {width:0px;}
+   0% {width:10px;}
   100% {width:100px}
 }
 
